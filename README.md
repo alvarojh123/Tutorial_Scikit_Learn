@@ -3,4 +3,13 @@ Informações importantes para aprender machine learning com  Scikit Learn
 
 ## Primeiro modelo com ScikitLearn
 
-kdfsdgnsd
+
+
+#### Carregar dados com pandas
+
+```python
+import pandas as pd
+data_set = pd.read_csv("dataset")
+
+```
+
