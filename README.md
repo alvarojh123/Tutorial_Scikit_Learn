@@ -24,7 +24,7 @@ data_set = pd.read_csv("dataset")
 
 AQUI COMECEI A REPORTAR TUDO 
 
-#### MANIPULANDO VARIÁVEIS CATEGÓRICAS
+#### MANIPULANDO (APENAS) VARIÁVEIS CATEGÓRICAS
 
 Temos dois tipos de variáveis: Numéricas e Categóricas. 
 
@@ -141,4 +141,47 @@ print(f"A acuracia é {scores.mean():.3f} +/- {scores.std():.3f}")
 #
 
 ```
+
+#### MANIPULANDO VARIÁVEIS NUMÉRICAS E CATEGÓRICAS
+
+```python
+import pandas as pd
+
+# Importar dados
+adult_census = pd.read_csv('../datasets/adult-census.csv')
+# Eliminar uma coluna duplicada, usando drop
+adult_census = adult_census.drop(columns='educations_num')
+
+# Definir a data e o target
+
+targe_name = 'class'
+target = adult_census[target_name]
+
+data = adult_census.drop(columns=target_name)
+```
+
+Selecionamos baseados nos tipos de dados.
+
+```python
+
+from sklearn.compose import make_column_selector as selector
+
+numerical_columns_selector   = selector(dtype_exclude=object)
+categorical_columns_selector = selector(dtype_include=object)
+
+numerical_columns   = numerical_columns_selector(data)
+categorical_columns = categorical_columns_selector(data)
+
+```
+
+
+
+```python
+
+from sklearn.preprocessing import OneHotEncoder, StandardScaler
+
+
+```
+
+
 
